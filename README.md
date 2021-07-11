@@ -20,10 +20,13 @@ yarn install
 yarn start
 ```
 
-**Run the Go Web Scraper:**
+**(Not Necessary) Run the Go Web Scraper:**
 ```
 cd go
 go run scrape.go
 ```
+
+**Troubleshooting Bootstrap Cards**
+The curent vertion of Bootstrap as of ***Saterday July 10, 2021*** has some kind of bug in it when it comes to Cards so I have provided an old vertion of `React-Bootstrap` in the file named "bootstrap"
 
 ## IMG
