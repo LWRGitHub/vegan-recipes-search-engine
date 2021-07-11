@@ -5,8 +5,7 @@ import {
   Switch
 } from 'react-router-dom';
 
-// Components
-import About from './About';
+// // Components
 import Home from './Home';
 import Footer from './Footer';
 
@@ -15,7 +14,6 @@ const App = () => (
     <div>
       <Switch>
         <Route path="/home" component={Home} />
-        <Route path="/about" component={About} />
         <Route component={Home} />
       </Switch>
       <Footer />
