@@ -28,12 +28,12 @@ function Home () {
     }, [searchTerm]);
 
     const cardBody = (title, href, scr) => (
-        <div className='card m-1 p-2'>
+        <div className='card'>
             <a className="p-0" href={href}>
                 <img className="card-img-top" src={scr} alt={title}/>
             </a>
             <div className="card-body">
-                <h5 className="card-title" id="card-text" style={{color:'black'}}>{title}</h5>
+                <h5 className="card-title" style={{color:'black'}}>{title}</h5>
             </div>
         </div>
     )
@@ -61,7 +61,7 @@ function Home () {
     
             <section className="container">
 
-                 <div className="card-columns m-1">
+                 <div className="card-columns">
                     {searchResults.map(item => (
                         item ? cardBody(item['title'], item['href'], item['img']) : ""
                     ))}
