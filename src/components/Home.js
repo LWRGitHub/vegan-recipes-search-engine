@@ -28,7 +28,7 @@ function Home () {
     }, [searchTerm]);
 
     const cardBody = (title, href, scr) => (
-        <div className='card'>
+        <div className='card m-1 p-2'>
             <a className="p-0" href={href}>
                 <img className="card-img-top" src={scr} alt={title}/>
             </a>
@@ -61,7 +61,7 @@ function Home () {
     
             <section className="container">
 
-                 <div className="card-columns">
+                 <div className="card-columns m-1">
                     {searchResults.map(item => (
                         item ? cardBody(item['title'], item['href'], item['img']) : ""
                     ))}

@@ -22,10 +22,5 @@ export const datas = [
         title:"vegan african carrot soup",
         img:"https://recipeforvegans.com/wp-content/uploads/2021/04/caarrot-soup2.jpg",
         href:"https://recipeforvegans.com/recipe/vegan-african-carrot-soup/"
-    },
-    {
-        title:"easy vegan tomato soup",
-        img:"https://recipeforvegans.com/wp-content/uploads/2021/03/Easy-VeganTomato-Soup-4.jpg",
-        href:"https://recipeforvegans.com/recipe/easy-vegan-tomato-soup/"
     }
 ]
