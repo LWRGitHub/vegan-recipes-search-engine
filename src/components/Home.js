@@ -1,5 +1,5 @@
 import React from 'react';
-import { datas } from '../data/data';
+import { datas } from '../data/datas';
 
 const people = [
   "Siri",
@@ -40,7 +40,7 @@ function Home () {
 
 
     return (
-        <div className="m-0 p-0">
+        <div>
             <section className="jumbotron">
                 <div className="container">
                     <div className="row">

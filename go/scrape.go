@@ -2,9 +2,21 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"html/template"
+	"io/ioutil"
 	"os"
+	"strings"
 
 	// "fmt"
+	// "context"
+	// "flag"
+	// "fmt"
+	// "io/ioutil"
+	// "log"
+	// "os"
+	// "strings"
+	// "text/template"
 
 	"github.com/gocolly/colly"
 )
@@ -13,6 +25,30 @@ type VegFoods struct {
 	Title string `json:"title"`
 	Img   string `json:"img"`
 	Href  string `json:"href"`
+}
+
+func makeDataJS() {
+	filename := "file.txt"
+	fileContents, err := ioutil.ReadFile(filename)
+	if err != nil {
+		panic(err)
+	}
+
+	contents := string(fileContents)
+
+	fmt.Println(contents)
+
+	f, err := os.Create(strings.SplitN("datas", ".", 2)[0] + ".js")
+	if err != nil {
+		panic(err)
+	}
+
+	t := template.Must(template.New("template.tmpl").ParseFiles("template.tmpl"))
+	err = t.Execute(f, contents)
+	if err != nil {
+		panic(err)
+	}
+	f.Close()
 }
 
 func main() {
@@ -47,7 +83,7 @@ func main() {
 
 		defer f.Close()
 
-		vegFoodsStr := string(vegFoodJson)
+		vegFoodsStr := string(vegFoodJson) + ","
 
 		if _, err = f.WriteString(vegFoodsStr); err != nil {
 			panic(err)
@@ -55,5 +91,7 @@ func main() {
 	})
 
 	c.Visit("https://recipeforvegans.com/")
+
+	makeDataJS()
 
 }
