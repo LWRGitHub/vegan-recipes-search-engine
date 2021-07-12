@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"io/ioutil"
+	"log"
 	"os"
 	"strings"
 
@@ -21,7 +22,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-type VegFoods struct {
+type VegFood struct {
 	Title string `json:"title"`
 	Img   string `json:"img"`
 	Href  string `json:"href"`
@@ -57,9 +58,9 @@ func main() {
 		colly.AllowedDomains("recipeforvegans.com"),
 	)
 
-	// var vegFoodsStr []byte
+	var vegFoodsSlice []VegFood
 
-	// vegFoodsSlice := []map[string][]byte{}
+	// vegFoodSlice := make([]VegFood, 5)
 
 	c.OnHTML("a.dj-thumb-link", func(e *colly.HTMLElement) {
 
@@ -67,31 +68,26 @@ func main() {
 		href := e.Attr("href")
 		img := e.ChildAttr("img", "src")
 
-		vegFoods := VegFoods{
+		vegFood := VegFood{
 			Title: title,
 			Img:   img,
 			Href:  href,
 		}
+		vegFoodsSlice = append(vegFoodsSlice, vegFood)
+	})
 
-		// fmt.Println(vegFoods)
-		vegFoodJson, _ := json.Marshal(vegFoods)
+	c.OnScraped(func(r *colly.Response) {
+		fmt.Println(vegFoodsSlice)
+		vegFoodJson, _ := json.Marshal(vegFoodsSlice)
 
-		f, err := os.OpenFile("file.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
-		if err != nil {
-			panic(err)
-		}
+		vegFoodsStr := string(vegFoodJson)
+		fmt.Println(vegFoodsStr)
 
-		defer f.Close()
-
-		vegFoodsStr := string(vegFoodJson) + ","
-
-		if _, err = f.WriteString(vegFoodsStr); err != nil {
-			panic(err)
+		if err := os.WriteFile("file.json", []byte(vegFoodsStr), 0666); err != nil {
+			log.Fatal(err)
 		}
 	})
 
 	c.Visit("https://recipeforvegans.com/")
-
-	makeDataJS()
 
 }
