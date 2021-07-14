@@ -11,7 +11,8 @@ export const datas = [
     },
     {
         title:"canned food/pickled red onions",
-        img:"https://recipeforvegans.com/wp-content/uploads/2021/05/picklet-red-onion.jpg",href:"https://recipeforvegans.com/recipe/canned-food-pickled-red-onions/"
+        img:"https://recipeforvegans.com/wp-content/uploads/2021/05/picklet-red-onion.jpg",
+        href:"https://recipeforvegans.com/recipe/canned-food-pickled-red-onions/"
     },
     {
         title:"chermoula condiment",

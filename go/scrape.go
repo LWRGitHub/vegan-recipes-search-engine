@@ -3,11 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"html/template"
-	"io/ioutil"
 	"log"
 	"os"
-	"strings"
+	"reflect"
 
 	// "fmt"
 	// "context"
@@ -18,6 +16,7 @@ import (
 	// "os"
 	// "strings"
 	// "text/template"
+	// "reflect"
 
 	"github.com/gocolly/colly"
 )
@@ -28,39 +27,11 @@ type VegFood struct {
 	Href  string `json:"href"`
 }
 
-func makeDataJS() {
-	filename := "file.txt"
-	fileContents, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-
-	contents := string(fileContents)
-
-	fmt.Println(contents)
-
-	f, err := os.Create(strings.SplitN("datas", ".", 2)[0] + ".js")
-	if err != nil {
-		panic(err)
-	}
-
-	t := template.Must(template.New("template.tmpl").ParseFiles("template.tmpl"))
-	err = t.Execute(f, contents)
-	if err != nil {
-		panic(err)
-	}
-	f.Close()
-}
-
-func main() {
+func GetData(vegFoodsSlice []VegFood) []byte {
 	c := colly.NewCollector(
 		// Restrict crawling to specific domains
 		colly.AllowedDomains("recipeforvegans.com"),
 	)
-
-	var vegFoodsSlice []VegFood
-
-	// vegFoodSlice := make([]VegFood, 5)
 
 	c.OnHTML("a.dj-thumb-link", func(e *colly.HTMLElement) {
 
@@ -90,4 +61,17 @@ func main() {
 
 	c.Visit("https://recipeforvegans.com/")
 
+	vegFoodJson, _ := json.Marshal(vegFoodsSlice)
+
+	return vegFoodJson
+
+}
+
+func main() {
+
+	var vegFoodsSlice []VegFood
+
+	GetData(vegFoodsSlice)
+
+	fmt.Println(reflect.TypeOf(GetData(vegFoodsSlice)))
 }
