@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/vegan-recipes-search-engine/static/css/main.a17a31d2.chunk.css",
+    "main.js": "/vegan-recipes-search-engine/static/js/main.893de1ef.chunk.js",
+    "main.js.map": "/vegan-recipes-search-engine/static/js/main.893de1ef.chunk.js.map",
+    "runtime-main.js": "/vegan-recipes-search-engine/static/js/runtime-main.223165df.js",
+    "runtime-main.js.map": "/vegan-recipes-search-engine/static/js/runtime-main.223165df.js.map",
+    "static/css/2.1bbc3ea0.chunk.css": "/vegan-recipes-search-engine/static/css/2.1bbc3ea0.chunk.css",
+    "static/js/2.09aa4c52.chunk.js": "/vegan-recipes-search-engine/static/js/2.09aa4c52.chunk.js",
+    "static/js/2.09aa4c52.chunk.js.map": "/vegan-recipes-search-engine/static/js/2.09aa4c52.chunk.js.map",
+    "static/js/3.425db54f.chunk.js": "/vegan-recipes-search-engine/static/js/3.425db54f.chunk.js",
+    "static/js/3.425db54f.chunk.js.map": "/vegan-recipes-search-engine/static/js/3.425db54f.chunk.js.map",
+    "index.html": "/vegan-recipes-search-engine/index.html",
+    "static/css/2.1bbc3ea0.chunk.css.map": "/vegan-recipes-search-engine/static/css/2.1bbc3ea0.chunk.css.map",
+    "static/css/main.a17a31d2.chunk.css.map": "/vegan-recipes-search-engine/static/css/main.a17a31d2.chunk.css.map",
+    "static/js/2.09aa4c52.chunk.js.LICENSE.txt": "/vegan-recipes-search-engine/static/js/2.09aa4c52.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.223165df.js",
+    "static/css/2.1bbc3ea0.chunk.css",
+    "static/js/2.09aa4c52.chunk.js",
+    "static/css/main.a17a31d2.chunk.css",
+    "static/js/main.893de1ef.chunk.js"
+  ]
+}
