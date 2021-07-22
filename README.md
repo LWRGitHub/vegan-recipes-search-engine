@@ -57,4 +57,4 @@ The curent vertion of Bootstrap as of ***Saterday July 10, 2021*** has some kind
 
 ## IMG
 
-<img alt="Screenshot of the home page. The image has photos of the Different vegan dishes with their names such as tomato soup & slaw with coriander." src="https://github.com/LWRGitHub/vegan-recipes-search-engine/tree/main/public/img/vegan-search-engine-home.png" width="100%" />
+<img alt="Screenshot of the home page. The image has photos of the Different vegan dishes with their names such as tomato soup & slaw with coriander." src="https://github.com/LWRGitHub/vegan-recipes-search-engine/blob/main/public/img/vegan-search-engine-home.png?raw=true" />
