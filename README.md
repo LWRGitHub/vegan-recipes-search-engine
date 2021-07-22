@@ -2,6 +2,8 @@
 
 This app has scraped data form the web with Go (Golang) to provide a data set of Vegan Recipes. The Website of this app is made with React.js & provides a vegan recipe search engin. I hope you link it!
 
+[Visit Site](https://lwrgithub.github.io/vegan-recipes-search-engine/)
+
 
 ## Tech Used
 
@@ -11,7 +13,7 @@ This app has scraped data form the web with Go (Golang) to provide a data set of
 - Go (Golang)
 - HTML/CSS
 - Boostrap
-- GitHub Pages
+- [GitHub Pages](https://lwrgithub.github.io/vegan-recipes-search-engine/)
 
 
 ## Setup, Install & Run
@@ -54,3 +56,5 @@ The curent vertion of Bootstrap as of ***Saterday July 10, 2021*** has some kind
 
 
 ## IMG
+
+<img alt="Screenshot of the home page. The image has photos of the Different vegan dishes with their names such as tomato soup & slaw with coriander." src="https://github.com/LWRGitHub/vegan-recipes-search-engine/tree/main/public/img/vegan-search-engine-home.png" width="100%" />
